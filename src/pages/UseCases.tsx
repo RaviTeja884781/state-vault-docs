@@ -115,35 +115,35 @@ function UseCases() {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">
+      <h1 className="text-3xl font-bold text-foreground mb-6">
         Real-World Use Cases
       </h1>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Authentication Management
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Handling user authentication state with StateVault:
         </p>
         <CodeBlock code={authenticationCode} language="typescript" />
       </section>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Shopping Cart
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Managing a shopping cart with items and total calculation:
         </p>
         <CodeBlock code={shoppingCartCode} language="typescript" />
       </section>
       
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Form Management
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Complex form state management with validation:
         </p>
         <CodeBlock code={formManagementCode} language="typescript" />

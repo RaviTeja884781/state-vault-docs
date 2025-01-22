@@ -46,35 +46,35 @@ dispatch(async (dispatch, getState) => {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">
+      <h1 className="text-3xl font-bold text-foreground mb-6">
         API Reference
       </h1>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           createSafeDepositBox
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Creates a new state container with its reducers and action creators:
         </p>
         <CodeBlock code={createSafeDepositBoxAPI} language="typescript" />
       </section>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           configureVault
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Combines multiple SafeDepositBoxes into a single vault:
         </p>
         <CodeBlock code={configureVaultAPI} language="typescript" />
       </section>
       
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Hooks
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Hooks for interacting with the vault:
         </p>
         <CodeBlock code={hooksAPI} language="typescript" />

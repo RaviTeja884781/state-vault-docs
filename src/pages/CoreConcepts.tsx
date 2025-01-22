@@ -42,28 +42,28 @@ const userBox = createSafeDepositBox({
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">
+      <h1 className="text-3xl font-bold text-foreground mb-6">
         Core Concepts
       </h1>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           SafeDepositBox
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           A SafeDepositBox is a modular state container that encapsulates a slice of your application state:
         </p>
         <CodeBlock code={safeDepositBoxCode} language="typescript" />
       </section>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Hooks
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           StateVault provides two main hooks for accessing and updating state:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
           <li>useVaultAccess - For reading state</li>
           <li>useVaultKey - For dispatching actions</li>
         </ul>
@@ -71,13 +71,13 @@ const userBox = createSafeDepositBox({
       </section>
       
       <section>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Type Safety
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           StateVault is built with TypeScript and provides complete type safety:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-600">
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>Automatic type inference for state and actions</li>
           <li>Type-safe selectors</li>
           <li>Compile-time checks for action payloads</li>
