@@ -1,8 +1,10 @@
-import CodeBlock from '../components/CodeBlock';
+import { Rocket, Terminal, Code, Zap } from "lucide-react";
+import CodeBlock from "../components/CodeBlock";
+import { Card } from "@/components/ui/card";
 
 function GettingStarted() {
   const installCode = `npm install statevault`;
-  
+
   const basicUsageCode = `import { createSafeDepositBox, configureVault, VaultGuard } from 'statevault';
 
 // Create a SafeDepositBox for counter state
@@ -32,38 +34,76 @@ function App() {
 }`;
 
   return (
-    <div className="max-w-4xl">
-      <h1 className="text-3xl font-bold text-foreground mb-6">
-        Getting Started with StateVault
-      </h1>
-      
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-foreground mb-4">
-          Installation
-        </h2>
-        <CodeBlock code={installCode} language="bash" />
-      </section>
-      
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-foreground mb-4">
-          Basic Usage
-        </h2>
-        <p className="text-muted-foreground mb-4">
-          Here's a simple example of how to set up StateVault in your React application:
+    <div className="max-w-4xl px-6">
+      <div>
+        <div className="flex items-center gap-3 mb-2">
+          <Rocket className="w-8 h-8 text-primary" />
+          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+            Getting Started
+          </h1>
+        </div>
+        <p className="text-lg text-muted-foreground mb-8">
+          Get up and running with StateVault in your React application in
+          minutes.
         </p>
-        <CodeBlock code={basicUsageCode} language="typescript" />
+      </div>
+
+      <section className="mb-12">
+        <div className="flex items-center gap-3 mb-6">
+          <Terminal className="w-6 h-6 text-primary" />
+          <h2 className="text-2xl font-semibold">Installation</h2>
+        </div>
+        <Card className="overflow-hidden">
+          <CodeBlock code={installCode} language="bash" />
+        </Card>
       </section>
-      
+
+      <section className="mb-12">
+        <div className="flex items-center gap-3 mb-6">
+          <Code className="w-6 h-6 text-primary" />
+          <h2 className="text-2xl font-semibold">Basic Usage</h2>
+        </div>
+        <p className="text-muted-foreground mb-4">
+          Here's a simple example of how to set up StateVault in your React
+          application:
+        </p>
+        <Card className="overflow-hidden">
+          <CodeBlock code={basicUsageCode} language="typescript" />
+        </Card>
+      </section>
+
       <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-4">
-          Key Concepts
-        </h2>
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-          <li>SafeDepositBox - Modular state containers</li>
-          <li>VaultGuard - Provider component for state access</li>
-          <li>Vault Configuration - Setting up your state structure</li>
-          <li>Keys - Action creators for state updates</li>
-        </ul>
+        <div className="flex items-center gap-3 mb-6">
+          <Zap className="w-6 h-6 text-primary" />
+          <h2 className="text-2xl font-semibold">Key Concepts</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            {
+              title: "SafeDepositBox",
+              desc: "Modular state containers for organized state management",
+            },
+            {
+              title: "VaultGuard",
+              desc: "Provider component that enables state access throughout your app",
+            },
+            {
+              title: "Vault Configuration",
+              desc: "Simple setup process for structuring your application state",
+            },
+            {
+              title: "Keys",
+              desc: "Type-safe action creators for predictable state updates",
+            },
+          ].map((item) => (
+            <div key={item.title}>
+              <Card className="p-4 h-full">
+                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              </Card>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
