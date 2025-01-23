@@ -2,7 +2,11 @@ import { Vault, Github, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-function Navbar() {
+interface NavbarProps {
+  toggleSidebar: () => void;
+}
+
+function Navbar({ toggleSidebar }: NavbarProps) {
   return (
     <nav className="fixed w-full z-50 backdrop-blur-sm bg-background/80 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
@@ -44,7 +48,12 @@ function Navbar() {
             </div>
           </div>
 
-          <Button variant="ghost" size="icon" className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleSidebar}
+          >
             <Menu className="w-5 h-5" />
           </Button>
         </div>

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Home, Rocket, Lightbulb, FileCode, BookOpen } from "lucide-react";
+import { Home, Rocket, Lightbulb, FileCode, BookOpen, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -10,12 +10,29 @@ const navigation = [
   { name: "API Reference", href: "/api", icon: BookOpen },
 ];
 
-function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean;
+  closeSidebar: () => void;
+}
+
+function Sidebar({ isOpen, closeSidebar }: SidebarProps) {
   const location = useLocation();
 
   return (
-    <div className="fixed w-64 h-[calc(100vh-4rem)] top-16 bg-background border-r">
+    <div
+      className={cn(
+        "fixed top-16 h-[calc(100vh-4rem)] bg-background border-r transition-transform z-40",
+        isOpen ? "translate-x-0" : "-translate-x-full",
+        "md:translate-x-0 md:w-64"
+      )}
+    >
       <aside className="h-full pt-8 pb-4">
+        <button
+          className="absolute top-4 right-4 md:hidden"
+          onClick={closeSidebar}
+        >
+          <X className="w-5 h-5" />
+        </button>
         <div className="px-3 pb-8">
           <div className="space-y-1">
             <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
